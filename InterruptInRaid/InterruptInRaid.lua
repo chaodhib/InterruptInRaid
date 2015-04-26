@@ -1,4 +1,4 @@
-﻿-- InterruptInRaid 30300-0.1
+﻿-- InterruptInRaid 30300-1.0
 -- chaodhib@gmail.com
 
 ---------------------------------------------------------------------------------
@@ -20,12 +20,21 @@ if (shortOutput == nil) then shortOutput = false; end
 
 local InterruptInRaid = CreateFrame('Frame')
 
+function UnitIsPlayer(GUID)
+	local typeFlag=tonumber(GUID:sub(5,5), 16) % 8;
+	return (typeFlag==0)
+end
+
 local function OnEvent(self, event, ...)
 
-	if not isActive then return end -- check if addon active
-	if GetNumRaidMembers()==0 then return end -- check if the player is in a raid group
-	if select(2,...) ~= "SPELL_INTERRUPT" then return end -- we only care about spell interrupt events
-	--if select(4,...) ~= UnitName("player") then return end
+	if not isActive then return end -- check if the addon is active
+	if GetNumRaidMembers()==0 then return end -- check if we are in a raid group
+	if select(2,...) ~= "SPELL_INTERRUPT"  then return end -- we only care about spell interrupt events
+	
+	local sourceGUID=select(3,...)
+	if not UnitIsPlayer(sourceGUID) then return end -- check if the source of the interupt is indeed a player
+	local targetGUID=select(6,...)
+	if UnitIsPlayer(targetGUID) then return end -- check if the target of the interupt is indeed NOT a player
 
 	local targetSpellID=select(12,...);
 	local targetName=select(7,...);
@@ -35,8 +44,9 @@ local function OnEvent(self, event, ...)
 	if not shortOutput then
 		SendChatMessage("Interruption OF "..GetSpellLink(targetSpellID).." made ON "..targetName.." WITH "..GetSpellLink(sourceSpellID) .." BY "..sourceName, "RAID")
 	else
-		SendChatMessage("Interruption OF "..GetSpellLink(targetSpellID) .." BY "..sourceName, "RAID")
+		SendChatMessage(GetSpellLink(targetSpellID) .." interrupted by " ..sourceName, "RAID")
 	end
+
 end
 
 -- Slash Commands

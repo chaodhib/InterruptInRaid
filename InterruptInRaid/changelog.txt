@@ -1,4 +1,9 @@
-﻿Change log
+Change log
+
 ------------------------------
+
+* Second release. (24/04/2015)
+- The addon now check if the source of the interrupt is a player. If not, it does nothing.
+- The addon now check if the target of the interrupt is not a player (it can be a NPC or a pet). If it is a player, it does nothing.
 
 * First release. (20/04/2015)
