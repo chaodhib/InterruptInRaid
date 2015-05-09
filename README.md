@@ -13,7 +13,7 @@ with:
 * ZZZ = source interrupter spell name
 * AAA = source name
 
-B) Short version: "XXX interrupted by YYY
+B) Short version: "XXX interrupted by YYY"
 
 with: 
 * XXX = target cast name (link)
