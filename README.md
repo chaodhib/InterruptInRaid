@@ -8,16 +8,15 @@ A)Normal version: "Interruption OF XXX made on YYY with AAA BY ZZZ"
 
 with: 
 
-XXX = target cast name (link)
-YYY = target name
-ZZZ = source name
-
-AAA = source interrupter spell name
+* XXX = target cast name (link)
+* YYY = target name
+* ZZZ = source name
+* AAA = source interrupter spell name
 
 B)Short version: "XXX interrupted by YYY
 
 with: 
-XXX = target cast name (link)
-YYY = source name
+* XXX = target cast name (link)
+* YYY = source name
 
-Command is : /iir
+The in-game command is : /iir
