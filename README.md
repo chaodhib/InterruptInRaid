@@ -4,16 +4,16 @@ The addon aims at tracking any spell-interrupt made by a player against an NPC w
 
 The syntax used is the following:
 
-A)Normal version: "Interruption OF XXX made on YYY with AAA BY ZZZ"
+A) Normal version: "Interruption OF XXX made on YYY with ZZZ BY AAA"
 
 with: 
 
 * XXX = target cast name (link)
 * YYY = target name
-* ZZZ = source name
-* AAA = source interrupter spell name
+* ZZZ = source interrupter spell name
+* AAA = source name
 
-B)Short version: "XXX interrupted by YYY
+B) Short version: "XXX interrupted by YYY
 
 with: 
 * XXX = target cast name (link)
