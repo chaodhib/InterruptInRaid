@@ -1,10 +1,10 @@
 ﻿## Interface: 30300
 ## Title: InterruptInRaid
-## Author: Chaodhib, Phalk (original author)
+## Author: Chaouki Dhib (aka Krondra), Phalk (Pare! author)
 ## Version: 1.0
 ## Notes: Spell interrupt announcer for raids based on Pare! Interrupt.
 ## eMail: chaodhib@gmail.com
 ## DefaultState: Enabled
 ## LoadOnDemand: 0
-## SavedVariables: isActive, shortOutput
+## SavedVariables: IIR_isActive, IIR_shortOutput
 InterruptInRaid.lua

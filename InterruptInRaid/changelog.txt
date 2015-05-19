@@ -2,6 +2,9 @@ Change log
 
 ------------------------------
 
+* third release. (19/05/2015)
+- Fixed a bug where my 2 addons would share the "isActive" variable (meaning that either both were active or both were disabled) which was not intended.
+
 * Second release. (24/04/2015)
 - The addon now check if the source of the interrupt is a player. If not, it does nothing.
 - The addon now check if the target of the interrupt is not a player (it can be a NPC or a pet). If it is a player, it does nothing.
